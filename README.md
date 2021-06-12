@@ -8,11 +8,13 @@ Cross-site scripting works by manipulating a vulnerable web site so that it retu
 There are three main types of XSS attacks. 
 
 These are:
-- Reflected XSS, where the malicious script comes from the current HTTP request.
--Stored XSS, where the malicious script comes from the website's database.
-- DOM-based XSS, where the vulnerability exists in client-side code rather than server-side code.
+- **Reflected XSS**, where the malicious script comes from the current HTTP request.
+- **Stored XSS**, where the malicious script comes from the website's database.
+- **DOM-based XSS**, where the vulnerability exists in client-side code rather than server-side code.
+
 ***Reflected cross-site scripting***
 Reflected XSS is the simplest variety of cross-site scripting. It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.
+
 Here is a simple example of a reflected XSS vulnerability:
 
 ```

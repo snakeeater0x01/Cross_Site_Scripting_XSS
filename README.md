@@ -37,7 +37,7 @@ Stored XSS (also known as persistent or second-order XSS) arises when an applica
 The data in question might be submitted to the application via HTTP requests; for example, comments on a blog post, user nicknames in a chat room, or contact details on a customer order. In other cases, the data might arrive from other untrusted sources; for example, a webmail application displaying messages received over SMTP, a marketing application displaying social media posts, or a network monitoring application displaying packet data from network traffic.
 Here is a simple example of a stored XSS vulnerability. A message board application lets users submit messages, which are displayed to other users:
 
-```
+```html
 <p>Hello, this is my message!</p>
 ```
 
@@ -52,7 +52,7 @@ DOM-based XSS (also known as DOM XSS) arises when an application contains some c
 
 In the following example, an application uses some JavaScript to read the value from an input field and write that value to an element within the HTML:
 
-```
+```javascript
 var search = document.getElementById('search').value;
 var results = document.getElementById('results');
 results.innerHTML = 'You searched for: ' + search;
@@ -65,3 +65,18 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 ```
 
 In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.
+
+## What can XSS be used for?
+An attacker who exploits a cross-site scripting vulnerability is typically able to:
+- Impersonate or masquerade as the victim user.
+- Carry out any action that the user is able to perform.
+- Read any data that the user is able to access.
+- Capture the user's login credentials.
+- Perform virtual defacement of the web site.
+- Inject trojan functionality into the web site.
+
+## Impact of XSS vulnerabilities
+The actual impact of an XSS attack generally depends on the nature of the application, its functionality and data, and the status of the compromised user. For example:
+ - In a brochureware application, where all users are anonymous and all information is public, the impact will often be minimal.
+ - In an application holding sensitive data, such as banking transactions, emails, or healthcare records, the impact will usually be serious.
+ - If the compromised user has elevated privileges within the application, then the impact will generally be critical, allowing the attacker to take full control of the vulnerable application and compromise all users and their data.

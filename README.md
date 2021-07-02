@@ -1,4 +1,4 @@
-# XSS Vulnrabilties
+# XSS Vulnerabilties
 In this section, I'll explain what cross-site scripting is, describe the different varieties of cross-site scripting vulnerabilities, and spell out how to find and prevent cross-site scripting.
 
 ## What is cross-site scripting (XSS)?
